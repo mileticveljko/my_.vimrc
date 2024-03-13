@@ -50,27 +50,3 @@ inoremap <c-j> <Down>
 inoremap <c-k> <Up>
 inoremap <c-h> <Left>
 inoremap <c-l> <Right>
-
-" Set file type specific settings
-au BufNewFile,BufRead *.c,*.cpp,*.h,*.hpp set filetype=cpp
-
-function! InsertHeader()
-    " Hardcoded author information
-    let l:file = expand("%")
-    let l:author = 'Veljko Miletic'
-    let l:date = strftime("%d-%m-%Y")
-    call append(0, "/*#====================================================")
-    " Move to the beginning of the buffer, insert the comment header, and go to the end
-    normal gg
-    put ='  # $File:      ' . l:file
-    put ='  # $Date:      ' . l:date
-    put ='  # $Revision:  ' . '$'
-    put ='  # $Author:    ' . l:author
-    put ='  # $Notice:    '
-    put ='  #====================================================*/'
-    normal G
-
-endfunction
-au BufNewFile *.c,*.cpp,*.h,*.hpp silent! call InsertHeader()
-map <leader>q :call InsertHeader()<CR>
-
