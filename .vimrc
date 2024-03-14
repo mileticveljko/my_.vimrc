@@ -20,7 +20,7 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.exe,*.flv,*.img,*.xlsx
 set statusline=
-set statusline+=\ 󱁕\ %F\ %M\ %Y\ %R
+set statusline+=\ #\ %F\ %M\ %Y\ %R
 set statusline+=%=
 set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 set laststatus=2
